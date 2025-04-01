@@ -1,12 +1,19 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ілля Зернов</title>
+    <title>Илья Зернов — Кандидат в Совет мигрантов</title>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Roboto+Condensed:ital,wght@0,500;0,900;1,500;1,900&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
     <style>
+        @font-face {
+            font-family: 'DIN Condensed';
+            src: url('https://fonts.cdnfonts.com/css/din-condensed') format('woff2');
+            font-weight: bold;
+            font-style: normal;
+        }
+
         * {
             transition: all 0.2s ease;
             margin: 0;
@@ -153,6 +160,56 @@
             font-style: normal;
         }
 
+        .program {
+            margin: 2rem 0;
+        }
+
+        .program a {
+            display: block;
+            padding: 1rem 1.5rem;
+            margin: 0.8rem 0;
+            background: #4594BF;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #ffffff;
+            transition: all 0.2s;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 500;
+            font-style: italic;
+            font-size: 19px;
+            line-height: 30px;
+        }
+
+        .program a:hover {
+            background: #3a7ca3;
+            color: #ffffff;
+        }
+
+        footer {
+            background: #F1F9FE;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        footer a {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+            margin: 0.5rem;
+            background: #4594BF;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #ffffff;
+            transition: all 0.2s;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            background: #3a7ca3;
+            color: #ffffff;
+        }
+
         @keyframes fade-in {
             from {
                 opacity: 0;
@@ -166,42 +223,6 @@
 
         .section-card {
             animation: fade-in 0.3s ease-out forwards;
-        }
-
-        footer {
-            background: #F1F9FE;
-            padding: 2rem 0;
-            margin-top: 3rem;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            padding: 0.8rem 1.5rem;
-            background: #4594BF;
-            border-radius: 4px;
-            text-decoration: none;
-            color: #ffffff;
-            transition: all 0.2s;
-            font-weight: 600;
-        }
-
-        .social-link:hover {
-            background: #3a7ca3;
-            color: #ffffff;
-        }
-
-        .social-link img {
-            width: 24px;
-            height: 24px;
-            margin-right: 8px;
         }
 
         @media (max-width: 768px) {
@@ -227,10 +248,6 @@
             .section-card {
                 padding: 1.5rem;
             }
-
-            .social-links {
-                flex-direction: column;
-            }
         }
     </style>
 </head>
@@ -240,13 +257,12 @@
         <div class="container header-content">
             <h1>Ілля Зернов</h1>
             <nav>
-                <a href="index_ua.html">Головна</a>
-                <a href="wahl_ua.html">Програма</a>
                 <a href="about_me_ua.html">Про мене</a>
+                <a href="wahl_ua.html">Програма</a>
                 <select onchange="location = this.value;">
                     <option value="#">Мова</option>
                     <option value="index.html">Русский</option>
-                    <option value="index_ua.html" selected>Українська</option>
+                    <option value="index_ua.html"  selected>Українська</option>
                     <option value="index_de.html">Deutsch</option>
                     <option value="index_en.html">English</option>
                 </select>
@@ -258,41 +274,21 @@
         <img src="/ilja_zernov/photo_index.JPG" alt="Ілля Зернов" class="main-image">
 
         <div class="section-card">
-            <h2>Про мене</h2>
-            <p>Я народився в Тольятті в багатодітній сім'ї. З дитинства я цікавився суспільно-політичними питаннями, став громадським активістом та волонтером у правозахисній організації ОВД-Інфо. Пізніше вступив до Казанського федерального університету на напрямок Історія міжнародних відносин.</p>
+            <h2>Вибори</h2>
+            <p>З 7 по 14 квітня відбудуться вибори до Ради з інтеграції та іноземців міста Лейпциг.</p>
 
-            <p>З 24 лютого 2022 року я активно виступав проти війни, організовував акції протесту. Частина моєї сім'ї — з України, з Дніпра та Дніпропетровської області, тому для мене питання суверенітету та цілісності України було очевидним. Крім внутрішнього відразу та морального неприйняття війни, це стало для мене ще й особистою темою.</p>
+            <h2>Программа</h2>
+            <div class="program">
+                <a href="wahl.html#consulting">🔹 Особисті консультації</a>
+                <a href="wahl.html#citizenship">🔹 Робота над проблемою довгих черг на отримання громадянства</a>
+                <a href="wahl.html#integration">🔹 Підтримка інтеграційних проектів</a>
+                <a href="wahl.html#power">🔹 Розширення повноважень Ради з інтеграції та іноземців</a>
+            </div>
 
-            <p>Через переслідування з боку держави я був змушений виїхати до Сербії. Там спочатку працював нелегально на заводі в важких умовах, а пізніше зайнявся журналістикою та активістською діяльністю. Згодом мені вдалося переїхати до Німеччини.</p>
-
-            <p>Зараз я працюю в дитячому садку в рамках федеральної добровільної служби (BFD). Живу в Німеччині вже два роки та інтенсивно вивчаю німецьку мову. З моменту приїзду до Лейпцигу я прив'язався до цього міста, полюбив його і хочу тут залишитися. Надалі планую вступити до університету.</p>
-
-            <p>Еміграція змінила мене — і, здається, на краще. Я навчився слухати людей, знаходити компроміси, бути толерантнішим і сміливішим у відстоюванні прав. Мій шлях до Німеччини — це історія про те, як мені допомагали інші: житлом, документами, порадами. Тепер я хочу робити хороші речі для інших, щоб ніхто не залишався без підтримки.</p>
-
-            <p>Як і всі мігранти, я стикаюся з бюрократичними складнощами, тривогами про майбутнє та побутовими труднощами. Однак я розумію, що багато людей відчувають ще більші перешкоди. Робота в Раді у справах мігрантів — це можливість підтримувати людей, захищати їхні права та інтереси. Саме цим я хочу займатися.</p>
+            <p>У вас є три голоси на цих виборах, і я хочу переконати вас віддати один з них за мою кандидатуру.</p>
         </div>
     </div>
 
-    <footer>
-        <div class="container">
-            <h2>Контакти</h2>
-            <p>Пишіть, якщо у вас є питання або пропозиції:</p>
-            <div class="social-links">
-                <a href="https://www.facebook.com/profile.php?id=100079325962454" target="_blank" class="social-link">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1024px-Facebook_Logo_%282019%29.png" alt="Facebook">
-                    Facebook
-                </a>
-                <a href="https://www.instagram.com/ilya_zernov_?igsh=MXF2cmFpbm4wZjY3Mw%3D%3D&utm_source=qr" target="_blank" class="social-link">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png" alt="Instagram">
-                    Instagram
-                </a>
-                <a href="https://t.me/Zernov_I" target="_blank" class="social-link">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/512px-Telegram_logo.svg.png" alt="Telegram">
-                    Telegram
-                </a>
-            </div>
-        </div>
-    </footer>
 </body>
 
 </html>
