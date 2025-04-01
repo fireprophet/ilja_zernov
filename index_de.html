@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilja Sernov</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Roboto+Condensed:ital,wght@0,500;0,900;1,500;1,900&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            transition: all 0.2s ease;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #F1F9FE;
+            color: #0E3043;
+            line-height: 30px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: #F1F9FE;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        h1 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 900;
+            font-style: italic;
+            font-size: 56px;
+            line-height: 64px;
+            color: #0E3043;
+            margin-bottom: 0;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin: 0 auto;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0E3043;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 16px;
+            line-height: 25px;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        nav a:hover {
+            background: rgba(0, 0, 0, 0.05);
+            color: #000000;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: #0E3043;
+            transition: all 0.2s ease;
+            transform: translateX(-50%);
+        }
+
+        nav a:hover::after {
+            width: 80%;
+        }
+
+        select {
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            background-color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        select:hover {
+            border-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .main-image {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin: 2rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 4px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 900;
+            font-style: italic;
+            font-size: 42px;
+            line-height: 48px;
+            color: #0E3043;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 19px;
+            color: #0E3043;
+            line-height: 30px;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(0.5em);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-card {
+            animation: fade-in 0.3s ease-out forwards;
+        }
+
+        footer {
+            background: #F1F9FE;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+            background: #4594BF;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #ffffff;
+            transition: all 0.2s;
+            font-weight: 600;
+        }
+
+        .social-link:hover {
+            background: #3a7ca3;
+            color: #ffffff;
+        }
+
+        .social-link img {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .section-card {
+                padding: 1.5rem;
+            }
+
+            .social-links {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container header-content">
+            <h1>Ilja Sernov</h1>
+            <nav>
+                <a href="index_de.html">Startseite</a>
+                <a href="wahl_de.html">Programm</a>
+                <a href="about_me_de.html">Über mich</a>
+                <select onchange="location = this.value;">
+                    <option value="#">Sprache</option>
+                    <option value="index.html">Русский</option>
+                    <option value="index_ua.html">Українська</option>
+                    <option value="index_de.html" selected>Deutsch</option>
+                    <option value="index_en.html">English</option>
+                </select>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <img src="photo_index.jpg" alt="Ilja Sernov" class="main-image">
+
+        <div class="section-card">
+            <h2>Über mich</h2>
+            <p>Ich wurde in Togliatti in einer kinderreichen Familie geboren. Seit meiner Kindheit interessiere ich mich für gesellschaftspolitische Fragen, wurde Bürgeraktivist und Freiwilliger bei der Menschenrechtsorganisation OVD-Info. Später studierte ich an der Kasaner Föderalen Universität im Fach Internationale Beziehungen.</p>
+
+            <p>Seit dem 24. Februar 2022 habe ich mich aktiv gegen den Krieg ausgesprochen und Protestaktionen organisiert. Ein Teil meiner Familie stammt aus der Ukraine, aus Dnipro und der Region Dnipropetrowsk, daher war für mich die Frage der Souveränität und territorialen Integrität der Ukraine offensichtlich. Neben der inneren Abscheu und moralischen Ablehnung des Krieges wurde dies auch zu einem persönlichen Thema für mich.</p>
+
+            <p>Aufgrund der Verfolgung durch den Staat musste ich nach Serbien ausreisen. Dort arbeitete ich zunächst illegal in einer Fabrik unter schwierigen Bedingungen und widmete mich später dem Journalismus und der Aktivistenarbeit. Schließlich gelang es mir, nach Deutschland zu ziehen.</p>
+
+            <p>Aktuell arbeite ich im Rahmen des Bundesfreiwilligendienstes (BFD) in einem Kindergarten. Ich lebe seit zwei Jahren in Deutschland und lerne intensiv Deutsch. Seit meiner Ankunft in Leipzig habe ich mich an diese Stadt gewöhnt, liebe sie und möchte hier bleiben. In Zukunft plane ich, an der Universität zu studieren.</p>
+
+            <p>Die Emigration hat mich verändert - und zwar zum Besseren. Ich habe gelernt, Menschen zuzuhören, Kompromisse zu finden, toleranter und mutiger bei der Verteidigung von Rechten zu sein. Mein Weg nach Deutschland ist eine Geschichte darüber, wie andere mir geholfen haben: mit Unterkunft, Dokumenten, Ratschlägen. Jetzt möchte ich Gutes für andere tun, damit niemand ohne Unterstützung bleibt.</p>
+
+            <p>Wie alle Migranten stoße ich auf bürokratische Schwierigkeiten, Zukunftsängste und alltägliche Herausforderungen. Ich verstehe jedoch, dass viele Menschen noch größeren Hindernissen gegenüberstehen. Die Arbeit im Integrations- und Ausländerbeirat ist eine Möglichkeit, Menschen zu unterstützen, ihre Rechte und Interessen zu verteidigen. Genau das möchte ich tun.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <h2>Kontakt</h2>
+            <p>Schreiben Sie mir, wenn Sie Fragen oder Vorschläge haben:</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=100079325962454" target="_blank" class="social-link">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1024px-Facebook_Logo_%282019%29.png" alt="Facebook">
+                    Facebook
+                </a>
+                <a href="https://www.instagram.com/ilya_zernov_?igsh=MXF2cmFpbm4wZjY3Mw%3D%3D&utm_source=qr" target="_blank" class="social-link">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png" alt="Instagram">
+                    Instagram
+                </a>
+                <a href="https://t.me/Zernov_I" target="_blank" class="social-link">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/512px-Telegram_logo.svg.png" alt="Telegram">
+                    Telegram
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

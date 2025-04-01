@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programm — Ilja Sernov</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Roboto+Condensed:ital,wght@0,500;0,900;1,500;1,900&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            transition: all 0.2s ease;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #F1F9FE;
+            color: #0E3043;
+            line-height: 30px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: #F1F9FE;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        h1 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 900;
+            font-style: italic;
+            font-size: 56px;
+            line-height: 64px;
+            color: #0E3043;
+            margin-bottom: 0;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin: 0 auto;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #0E3043;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            font-size: 16px;
+            line-height: 25px;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        nav a:hover {
+            background: rgba(0, 0, 0, 0.05);
+            color: #000000;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: #0E3043;
+            transition: all 0.2s ease;
+            transform: translateX(-50%);
+        }
+
+        nav a:hover::after {
+            width: 80%;
+        }
+
+        select {
+            padding: 0.5rem 1rem;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            background-color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        select:hover {
+            border-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 4px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 900;
+            font-style: italic;
+            font-size: 42px;
+            line-height: 48px;
+            color: #0E3043;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 19px;
+            color: #0E3043;
+            line-height: 30px;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .program {
+            margin: 2rem 0;
+        }
+
+        .program a {
+            display: block;
+            padding: 1rem 1.5rem;
+            margin: 0.8rem 0;
+            background: #4594BF;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #ffffff;
+            transition: all 0.2s;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 500;
+            font-style: italic;
+            font-size: 19px;
+            line-height: 30px;
+        }
+
+        .program a:hover {
+            background: #3a7ca3;
+            color: #ffffff;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(0.5em);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-card {
+            animation: fade-in 0.3s ease-out forwards;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .section-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container header-content">
+            <h1>Programm</h1>
+            <nav>
+                <a href="index_de.html">Startseite</a>
+                <a href="about_me_de.html">Über mich</a>
+                <select onchange="location = this.value;">
+                    <option value="#">Sprache</option>
+                    <option value="wahl.html">Русский</option>
+                    <option value="wahl_ua.html">Українська</option>
+                    <option value="wahl_de.html" selected>Deutsch</option>
+                    <option value="wahl_en.html">English</option>
+                </select>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="section-card">
+            <h2>Persönliche Beratung</h2>
+            <p>Ich werde regelmäßige persönliche Beratungen für Migranten durchführen, bei denen wir alle Fragen im Zusammenhang mit dem Aufenthalt in Deutschland besprechen können. Dies kann Hilfe bei der Ausfüllung von Dokumenten, Beratung in rechtlichen Fragen oder einfach ein Gespräch darüber sein, wie man sich besser in die deutsche Gesellschaft integrieren kann.</p>
+        </div>
+
+        <div class="section-card">
+            <h2>Arbeit an dem Problem der langen Warteschlangen für die Einbürgerung</h2>
+            <p>Ich verstehe, wie wichtig es für viele Migranten ist, die deutsche Staatsbürgerschaft zu erhalten. Ich werde daran arbeiten, diesen Prozess effizienter und transparenter zu gestalten. Dies beinhaltet den Dialog mit den zuständigen Behörden und die Suche nach Lösungen zur Optimierung des Verfahrens.</p>
+        </div>
+
+        <div class="section-card">
+            <h2>Unterstützung von Integrationsprojekten</h2>
+            <p>Ich werde Projekte unterstützen und entwickeln, die Migranten helfen, sich besser in die deutsche Gesellschaft zu integrieren. Dies kann Hilfe beim Spracherwerb, kulturelle Veranstaltungen oder Programme zur beruflichen Orientierung sein.</p>
+        </div>
+
+        <div class="section-card">
+            <h2>Erweiterung der Befugnisse des Migrationsbeirats</h2>
+            <p>Ich werde daran arbeiten, dass der Migrationsbeirat mehr Möglichkeiten hat, Entscheidungen zu beeinflussen, die Migranten betreffen. Dies beinhaltet die Stärkung der Verbindungen zur Stadtverwaltung und anderen wichtigen Institutionen.</p>
+        </div>
+    </div>
+</body>
+
+</html>
